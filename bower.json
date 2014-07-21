@@ -1,0 +1,19 @@
+{
+  "name": "wsol-accordion",
+  "version": "3.4.0",
+  "homepage": "https://github.com/websolutions/accordion",
+  "authors": [
+    "Maxwell Barvian <max@barvian.me>"
+  ],
+  "description": "Content accordions that toggle content when clicked.",
+  "main": [
+    "js/wsol.accordion.js",
+    "css/wsol.accordion.css"
+  ],
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6.4"
+  }
+}
