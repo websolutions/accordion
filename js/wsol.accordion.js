@@ -12,7 +12,7 @@ WSOL["Accordions"].init = true;
 
 (function ($) {
   var defaults = {
-    HeaderSelector: "h3",          // jQuery selector for clickable header
+    HeaderSelector: ".header",          // jQuery selector for clickable header
     BodySelector: ".more",      // jQuery selector for content that will toggle
     AccordionSelector: ".item", // jQuery selector for accordion items
     TeaserSelector: ".info",    // jQuery selector for clickable teaser
@@ -22,12 +22,12 @@ WSOL["Accordions"].init = true;
     StartCollapsed: true,          // should the accordions start in the closed state
     Start1stOpen: false,             // except for the first item
     Sprite: {
-      SpriteContainer: "h3",       // jQuery selector for clickable sprite (+/-)
+      SpriteContainer: ".sprite",       // jQuery selector for clickable sprite (+/-)
       SpriteOpenClass: "open",     // class to be applied when accordion is open
       SpriteCloseClass: "close",   // class to be applied when accordion is closed
       SpriteOpenText: "-",         // text to display when accordion is open ("" if an image will be used)
       SpriteCloseText: "+",        // text to display when accoridon is closed ("" if an image will be used)
-      SpriteClass: "toggleSprite"  // class to be added to the sprite container
+      SpriteClass: "toggle-sprite"  // class to be added to the sprite container
     },
     ToggleSpeed: 500,              // animation length (in ms)
     Debug: false,                  // output debug statments in the console
