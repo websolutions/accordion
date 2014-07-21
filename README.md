@@ -7,14 +7,14 @@ Content accordions that toggle content when clicked.
 Example DOM structure:
 ```html
 <div class="accordion">
-  <div class="item clearfix">
+  <div class="item">
     <h3>Accordion Item #1</h3>
     <div class="info">Teaser text.</div>
     <div class="more">
       <p>Accordion Content</p>
     </div>
   </div>
-  <div class="item clearfix">
+  <div class="item">
     <h3>Accordion Item #2</h3>
     <div class="info">Teaser text.</div>
     <div class="more">
