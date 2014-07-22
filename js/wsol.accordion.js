@@ -1,3 +1,9 @@
+/**
+ * wsol.accordion.js 3.4.0
+ * http://github.com/websolutions/accordion
+ */
+
+
 if ( typeof WSOL == "undefined" ) {
   var WSOL = {"Accordions":[]};
 } else {
