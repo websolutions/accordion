@@ -15,14 +15,14 @@ The most basic example follows this DOM structure:
 ```html
 <div class="accordion">
   <div class="item">
-    <h3 class="header sprite">Accordion Item #1</h3>
+    <h3 class="header">Accordion Item #1</h3>
     <div class="info">Teaser text.</div>
     <div class="more">
       <p>Accordion Content</p>
     </div>
   </div>
   <div class="item">
-    <h3 class="header sprite">Accordion Item #2</h3>
+    <h3 class="header">Accordion Item #2</h3>
     <div class="info">Teaser text.</div>
     <div class="more">
       <p>Accordion Content</p>
@@ -33,7 +33,7 @@ The most basic example follows this DOM structure:
 
 And is initialized like so:
 ```javascript
-$(".accordion").accordion()
+$(".accordion").wsol_accordion()
 ```
 
 ### Configuring

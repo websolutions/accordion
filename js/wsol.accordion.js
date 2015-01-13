@@ -252,10 +252,12 @@ WSOL.Accordions.init = true;
       Setting = WSOL.Accordions[i].Setting;
 
       WSOL.Accordions[i].$Accordions[0].each( function() { 
-        $(this).find(Setting.HeaderSelector).off("click").css("cursor", "default");
-        $(this).find(Setting.TeaserSelector).off("click").css("cursor", "default");
-        $(this).find(Setting.Sprite.SpriteSelector).remove();
-        $(this).find(Setting.BodySelector).show();
+        $(this).find( Setting.HeaderSelector ).off( "click" ).css( "cursor", "default" );
+        $(this).find( Setting.TeaserSelector ).off( "click" ).css( "cursor", "default" );
+        $(this).find( Setting.Sprite.SpriteSelector ).remove();
+        $(this).find( Setting.BodySelector ).show();
+        $(this).data( "accordion", null ).removeAttr( "data-accordion" );
+        $(this).data( "accordion-number", null ).removeAttr( "data-accordion-number" );
       });
 
       if (typeof Setting.onDestroy === "function") {
