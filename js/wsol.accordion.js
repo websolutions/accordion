@@ -277,7 +277,6 @@ WSOL.Accordions.init = true;
       Setting = WSOL.Accordions[i].Setting;
 
       WSOL.Accordions[i].$Accordions[0].each( function() { 
-        console.log(Setting);
         $(this).find(Setting.HeaderSelector).off("click").css("cursor", "default");
         $(this).find(Setting.TeaserSelector).off("click").css("cursor", "default");
         $(this).find(Setting.Sprite.SpriteSelector).remove();
