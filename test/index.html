@@ -26,14 +26,14 @@
 
     <div class="accordion set1">
       <div class="item">
-        <h3 class="header sprite">Accordion Item #1</h3>
+        <h3 class="header">Accordion Item #1</h3>
         <div class="info">Teaser text.</div>
         <div class="more">
           <p>Accordion Content</p>
         </div>
       </div>
       <div class="item">
-        <h3 class="header sprite">Accordion Item #2</h3>
+        <h3 class="header">Accordion Item #2</h3>
         <div class="info">Teaser text.</div>
         <div class="more">
           <p>Accordion Content</p>
@@ -43,16 +43,33 @@
 
     <div class="accordion set2">
       <div class="item">
-        <h3 class="header sprite">Accordion Item #1</h3>
+        <h3 class="header">Accordion Item #1</h3>
         <div class="info">Teaser text.</div>
         <div class="more">
           <p>Accordion Content</p>
         </div>
       </div>
       <div class="item">
-        <h3 class="header sprite">Accordion Item #2</h3>
+        <h3 class="header">Accordion Item #2</h3>
         <div class="info">Teaser text.</div>
         <div class="more">
+          <p>Accordion Content</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-accordion set3">
+      <div class="mod">
+        <h3 class="hd">Accordion Item #1</h3>
+        <div class="teaser">Teaser text.</div>
+        <div class="bd">
+          <p>Accordion Content</p>
+        </div>
+      </div>
+      <div class="mod">
+        <h3 class="hd">Accordion Item #2</h3>
+        <div class="teaser">Teaser text.</div>
+        <div class="bd">
           <p>Accordion Content</p>
         </div>
       </div>
@@ -65,9 +82,16 @@
     <p>&nbsp;</p>
 
     <p> <button onclick="$('.accordion').wsol_accordion();">Make Accordions</button> </p>
-    <p> <button onclick="$('.accordion').each( function() { $(this).data('wsol.accordion').destroy(); } );">Destroy All Accordions</button> </p>
+    <p> <button onclick="$('.custom-accordion').wsol_accordion({
+      AccordionSelector: '.mod',
+      HeaderSelector: '.hd',
+      TeaserSelector: '.teaser',
+      BodySelector: '.bd'
+    });">Make Custom accordion</button> </p>
+    <p> <button onclick="$('.accordion, .custom-accordion').each( function() { $(this).data('wsol.accordion').destroy(); } );">Destroy All Accordions</button> </p>
     <p> <button onclick="$('.accordion.set1').data('wsol.accordion').destroy()">Destroy 1st Accordion</button> </p>
     <p> <button onclick="$('.accordion.set2').data('wsol.accordion').destroy()">Destroy 2nd Accordion</button> </p>
+    <p> <button onclick="$('.custom-accordion').data('wsol.accordion').destroy()">Destroy 3rd Accordion</button> </p>
 
   <body>
 

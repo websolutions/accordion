@@ -28,34 +28,6 @@ WSOL.Accordions.init = true;
     base.el = el;
     base.$el.data("wsol.accordion", base);
 
-    var defaults = {
-      HeaderSelector: ".header",          // jQuery selector for clickable header
-      BodySelector: ".more",      // jQuery selector for content that will toggle
-      AccordionSelector: ".item", // jQuery selector for accordion items
-      TeaserSelector: ".info",    // jQuery selector for clickable teaser
-      AutoCollapse: true,            // should other accordion items close when one is opened
-      OpenClass: "open",             // class to be applied when accordion is open
-      CloseClass: "close",           // class to be applied when accordion is closed
-      StartCollapsed: true,          // should the accordions start in the closed state
-      Start1stOpen: false,             // except for the first item
-      Sprite: {
-        SpriteContainer: ".sprite",       // jQuery selector for clickable sprite (+/-)
-        SpriteOpenClass: "open",     // class to be applied when accordion is open
-        SpriteCloseClass: "close",   // class to be applied when accordion is closed
-        SpriteOpenText: "-",         // text to display when accordion is open ("" if an image will be used)
-        SpriteCloseText: "+",        // text to display when accoridon is closed ("" if an image will be used)
-        SpriteClass: "toggle-sprite"  // class to be added to the sprite container
-      },
-      ToggleSpeed: 500,              // animation length (in ms)
-      Debug: false,                  // output debug statments in the console
-      onPreLoad: null,               // callback function
-      onPostLoad: null,              // callback function
-      onLoadComplete: null,          // callback function
-      onDestroy: null,               // callback function
-      onBeforeOpen: null,            // callback function
-      onBeforeClose: null            // callback function
-    };
-
     var EventSelector = "";
 
     base.WriteLog = function( message ) {
@@ -77,15 +49,18 @@ WSOL.Accordions.init = true;
       WSOL.Accordions.init = false;
       var i = WSOL.Accordions.length - 1;
 
-      WSOL.Accordions[i].Setting = [];
+
+      // WSOL.Accordions[i].Setting = [];
       WSOL.Accordions[i].$Accordions = [];
       base.WriteLog(i, WSOL.Accordions);
 
-      if(typeof options !== "undefined") {
-        WSOL.Accordions[i].Setting = $.extend(true, {}, defaults, options);
-      } else {
-        WSOL.Accordions[i].Setting = defaults;
-      }
+      WSOL.Accordions[i].Setting = $.extend({}, $.wsol.accordion.defaultOptions, options);
+
+      // if(typeof options !== "undefined") {
+      //   WSOL.Accordions[i].Setting = $.extend(true, {}, defaults, options);
+      // } else {
+      //   WSOL.Accordions[i].Setting = defaults;
+      // }
 
       base.WriteLog(base.$el);
       base.WriteLog(WSOL.Accordions[i].Setting);
@@ -288,7 +263,35 @@ WSOL.Accordions.init = true;
       }
     };
 
-    base.Init( el , options );
+    base.Init( options );
+  };
+
+  $.wsol.accordion.defaultOptions = {
+    AccordionSelector: ".item",    // jQuery selector for accordion items
+    HeaderSelector: ".header",     // jQuery selector for clickable header
+    BodySelector: ".more",         // jQuery selector for content that will toggle
+    TeaserSelector: ".info",       // jQuery selector for clickable teaser
+    AutoCollapse: true,            // should other accordion items close when one is opened
+    OpenClass: "open",             // class to be applied when accordion is open
+    CloseClass: "close",           // class to be applied when accordion is closed
+    StartCollapsed: true,          // should the accordions start in the closed state
+    Start1stOpen: false,           // except for the first item
+    Sprite: {
+      SpriteContainer: ".sprite",  // jQuery selector for clickable sprite (+/-)
+      SpriteOpenClass: "open",     // class to be applied when accordion is open
+      SpriteCloseClass: "close",   // class to be applied when accordion is closed
+      SpriteOpenText: "-",         // text to display when accordion is open ("" if an image will be used)
+      SpriteCloseText: "+",        // text to display when accoridon is closed ("" if an image will be used)
+      SpriteClass: "toggle-sprite" // class to be added to the sprite container
+    },
+    ToggleSpeed: 500,              // animation length (in ms)
+    Debug: false,                  // output debug statments in the console
+    onPreLoad: null,               // callback function
+    onPostLoad: null,              // callback function
+    onLoadComplete: null,          // callback function
+    onDestroy: null,               // callback function
+    onBeforeOpen: null,            // callback function
+    onBeforeClose: null            // callback function
   };
 
   $.fn.wsol_accordion = function (options) {
