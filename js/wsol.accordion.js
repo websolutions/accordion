@@ -1,5 +1,5 @@
 /**
- * wsol.accordion.js 3.5.0
+ * wsol.accordion.js 3.5.1
  * http://github.com/websolutions/accordion
  */
 
@@ -104,7 +104,7 @@ WSOL.Accordions.init = true;
         if (typeof WSOL.Accordions[i].Setting.Sprite.SpriteContainer === "string") {
           var spriteText = WSOL.Accordions[i].Setting.StartCollapsed ? WSOL.Accordions[i].Setting.Sprite.SpriteCloseText : WSOL.Accordions[i].Setting.Sprite.SpriteOpenText;
           WSOL.Accordions[i].Setting.Sprite.SpriteSelector = "." + WSOL.Accordions[i].Setting.Sprite.SpriteClass;
-          WSOL.Accordions[i].$Accordions[j].find(WSOL.Accordions[i].Setting.Sprite.SpriteContainer).append($("<a>" + spriteText + "</a>").addClass(WSOL.Accordions[i].Setting.Sprite.SpriteClass));
+          WSOL.Accordions[i].$Accordions[j].find(WSOL.Accordions[i].Setting.Sprite.SpriteContainer).append($("<i>" + spriteText + "</i>").addClass(WSOL.Accordions[i].Setting.Sprite.SpriteClass));
         }
 
         if (typeof WSOL.Accordions[i].Setting.TeaserSelector === "string") {
@@ -141,7 +141,7 @@ WSOL.Accordions.init = true;
       Setting = WSOL.Accordions[i].Setting;
       base.WriteLog(Setting);
 
-      $parent = $(e).parents(Setting.AccordionSelector);
+      $parent = $(e).closest(Setting.AccordionSelector);
       $sprite = $parent.find(Setting.Sprite.SpriteSelector);
       $body = $parent.find(Setting.BodySelector);
 
@@ -164,7 +164,7 @@ WSOL.Accordions.init = true;
 
     base.OpenElm = function( elm ) {
       try {
-        WSOL.Accordions[$(elm).parents("[data-accordion]").data('accordion')].Setting.onBeforeOpen();
+        WSOL.Accordions[$(elm).closest("[data-accordion]").data('accordion')].Setting.onBeforeOpen();
       } catch (err) {
         base.WriteLog(err);
       }
@@ -182,7 +182,7 @@ WSOL.Accordions.init = true;
 
     base.CloseElm = function( elm ) {
       try {
-        WSOL.Accordions[$(elm).parents("[data-accordion]").data('accordion')].Setting.onBeforeClose();
+        WSOL.Accordions[$(elm).closest("[data-accordion]").data('accordion')].Setting.onBeforeClose();
       } catch (err) {
         base.WriteLog(err);
       }
