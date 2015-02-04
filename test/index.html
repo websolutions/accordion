@@ -18,7 +18,7 @@
     <script src="../js/wsol.accordion.js" type="text/javascript"></script>
 
     <style>
-      
+
     </style>
   </head>
 
@@ -26,14 +26,14 @@
 
     <div class="accordion set1">
       <div class="item">
-        <h3 class="header">Accordion Item #1</h3>
+        <h3 class="header sprite-container">Accordion Item #1</h3>
         <div class="info">Teaser text.</div>
         <div class="more">
           <p>Accordion Content</p>
         </div>
       </div>
       <div class="item">
-        <h3 class="header">Accordion Item #2</h3>
+        <h3 class="header sprite-container">Accordion Item #2</h3>
         <div class="info">Teaser text.</div>
         <div class="more">
           <p>Accordion Content</p>
@@ -83,10 +83,9 @@
 
     <p> <button onclick="$('.accordion').wsol_accordion();">Make Accordions</button> </p>
     <p> <button onclick="$('.custom-accordion').wsol_accordion({
-      AccordionSelector: '.mod',
-      HeaderSelector: '.hd',
-      TeaserSelector: '.teaser',
-      BodySelector: '.bd'
+      itemSelector: '.mod',
+      headerSelector: '.hd',
+      bodySelector: '.bd'
     });">Make Custom accordion</button> </p>
     <p> <button onclick="$('.accordion, .custom-accordion').each( function() { $(this).data('wsol.accordion').destroy(); } );">Destroy All Accordions</button> </p>
     <p> <button onclick="$('.accordion.set1').data('wsol.accordion').destroy()">Destroy 1st Accordion</button> </p>
