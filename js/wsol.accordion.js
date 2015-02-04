@@ -39,6 +39,8 @@
     };
 
     base._triggerHandler = function(event) {
+      $(this).is("a") && event.preventDefault();
+
       base.toggle();
     };
 
