@@ -139,8 +139,8 @@
         }))
         .map(function() { return $(this).data("wsol.accordionItem") });
 
-      if (!base.options.startCollapsed && base.options.startFirstOpen) {
-        base.items.eq(0).open();
+            if (base.options.startCollapsed && base.options.startFirstOpen) {
+                base.items[0].open();
       }
     };
 
