@@ -63,7 +63,9 @@
       base.$el
         .removeClass(base.options.closeClass)
         .addClass(base.options.openClass)
-      base.$body.stop().slideDown(base.options.toggleSpeed);
+      base.$body.stop().slideDown(base.options.toggleSpeed, function(){
+        base.$body.height('')
+      });
       base._rebuildSprite();
     };
 
@@ -76,7 +78,9 @@
       base.$el
         .removeClass(base.options.openClass)
         .addClass(base.options.closeClass)
-      base.$body.stop().slideUp(base.options.toggleSpeed);
+      base.$body.stop().slideUp(base.options.toggleSpeed, function(){
+        base.$body.height('')
+      });
       base._rebuildSprite();
     };
 
