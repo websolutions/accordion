@@ -82,7 +82,7 @@
 
     base.destroy = function() {
       base.$sprite.remove();
-      base.$body.stop().css("display", "");
+      base.$body.stop().css("display", "").attr('style','');
 
       // Remove events
       base.$header.off(".wsol.accordionItem");
