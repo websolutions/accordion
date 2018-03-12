@@ -1,0 +1,12 @@
+{
+  "name": "wsol.accordion",
+  "version": "4.0.0",
+  "description": "Content accordions that toggle content when clicked.",
+  "contributors": [
+    "Maxwell Barvian <max@barvian.me>"
+  ],
+  "repository": "websolutions/accordion",
+  "license": "MIT",
+  "bugs": "https://github.com/websolutions/accordion/issues",
+  "homepage": "https://github.com/websolutions/accordion"
+}
