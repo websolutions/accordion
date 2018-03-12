@@ -1,6 +1,6 @@
 {
   "name": "wsol.accordion",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Content accordions that toggle content when clicked.",
   "contributors": [
     "Maxwell Barvian <max@barvian.me>"
