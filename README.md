@@ -56,3 +56,5 @@ Option                      | Type     | Description                            
 `toggleSpeed`               | Integer  | Animation length (ms)                                                | `500`
 `beforeOpen`                | Function | Function called before the accordion item is opened                  | `null`
 `beforeClose`               | Function | Function called before the accordion item is closed                  | `null`
+`afterOpen`                 | Function | Function called after the accordion item is opened                   | `null`
+`afterClose`                | Function | Function called after the accordion item is closed                   | `null`
