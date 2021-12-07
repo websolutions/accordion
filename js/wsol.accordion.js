@@ -1,5 +1,5 @@
 /**
- * wsol.accordion.js 4.1.0
+ * wsol.accordion.js 4.1.1
  * http://github.com/websolutions/accordion
  */
  
