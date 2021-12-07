@@ -2,7 +2,7 @@
  * wsol.accordion.js 4.1.0
  * http://github.com/websolutions/accordion
  */
-
+ 
 ; (function ($, window, document, undefined) {
     if (!$.wsol) {
         $.wsol = {};

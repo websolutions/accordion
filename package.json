@@ -1,12 +1,28 @@
 {
-  "name": "wsol.accordion",
+  "name": "@wearediagram/wsol.accordion",
   "version": "4.1.0",
   "description": "Content accordions that toggle content when clicked.",
   "contributors": [
     "Maxwell Barvian <max@barvian.me>"
   ],
-  "repository": "websolutions/accordion",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websolutions/accordion.git"
+  },
   "license": "MIT",
-  "bugs": "https://github.com/websolutions/accordion/issues",
-  "homepage": "https://github.com/websolutions/accordion"
+  "bugs": {
+    "url": "https://github.com/websolutions/accordion/issues"
+  },
+  "homepage": "https://github.com/websolutions/accordion",
+  "main": "./js/wsol.accordion.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "accordion"
+  ],
+  "author": "Diagram"
 }
