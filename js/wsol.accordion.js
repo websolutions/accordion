@@ -1,9 +1,15 @@
 /**
- * wsol.accordion.js 4.1.1
+ * wsol.accordion.js 4.1.2
  * http://github.com/websolutions/accordion
  */
  
-; (function ($, window, document, undefined) {
+ ;(function(factory) {
+  if (typeof module === 'object' && typeof module.exports === 'object') {
+    factory(require('jquery'), window, document);
+  } else {
+    factory(jQuery, window, document);
+  }
+}(function ($, window, document, undefined) {
     if (!$.wsol) {
         $.wsol = {};
     }
@@ -202,3 +208,5 @@
     };
 
 })(jQuery, window, document);
+
+export default $.wsol.accordion
