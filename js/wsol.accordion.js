@@ -207,6 +207,4 @@
         });
     };
 
-})(jQuery, window, document);
-
-export default $.wsol.accordion
+}));
