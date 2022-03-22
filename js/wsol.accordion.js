@@ -31,7 +31,7 @@
             base.$header = base.$el.find(base.options.headerSelector);
             base.$body = base.$el.find(base.options.bodySelector);
             base.$spriteContainer = base.$el.find(base.options.spriteContainer);
-            base.$sprite = $("<div />").addClass(base.options.spriteClass).appendTo(base.$spriteContainer);
+            base.$sprite = $("<button />").addClass(base.options.spriteClass).appendTo(base.$spriteContainer);
             base.toggle(!base.options.startCollapsed);
 
             // Handle events
