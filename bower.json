@@ -1,9 +1,10 @@
 {
   "name": "wsol-accordion",
-  "version": "4.1.0",
+  "version": "6.0.0",
   "homepage": "https://github.com/websolutions/accordion",
   "authors": [
-    "Maxwell Barvian <max@barvian.me>"
+    "Maxwell Barvian <max@barvian.me>",
+    "Nick Melville <nmelville@wearediagram.com"
   ],
   "description": "Content accordions that toggle content when clicked.",
   "main": [

@@ -1,9 +1,10 @@
 {
   "name": "@wearediagram/wsol.accordion",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Content accordions that toggle content when clicked.",
   "contributors": [
-    "Maxwell Barvian <max@barvian.me>"
+    "Maxwell Barvian <max@barvian.me>",
+    "Nick Melville <nmelville@wearediagram.com"
   ],
   "repository": {
     "type": "git",

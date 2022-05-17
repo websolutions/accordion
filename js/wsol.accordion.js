@@ -1,5 +1,5 @@
 /**
- * wsol.accordion.js 5.0.0
+ * wsol.accordion.js 5.1.0
  * http://github.com/websolutions/accordion
  */
  
@@ -18,7 +18,10 @@
      * Accordion Item
      */
     $.wsol.accordionItem = function (el, options) {
-        var base = this;
+        var base = this,
+            uniqueId = Math.round( performance.now() * Date.now() * Math.random() ),
+            counter = 1
+            ;
 
         base.$el = $(el);
         base.el = el;
@@ -26,16 +29,32 @@
         base.$el.data("wsol.accordionItem", base);
 
         base.init = function () {
+            var itemId = uniqueId + '-' + counter;
             base.options = $.extend({}, $.wsol.accordionItem.defaultOptions, options);
 
             base.$header = base.$el.find(base.options.headerSelector);
             base.$body = base.$el.find(base.options.bodySelector);
             base.$spriteContainer = base.$el.find(base.options.spriteContainer);
-            base.$sprite = $("<button />").addClass(base.options.spriteClass).appendTo(base.$spriteContainer);
+            base.$sprite = $("<div />").addClass(base.options.spriteClass).appendTo(base.$spriteContainer);
+            
+            base.$header.wrapInner("<button class='accordion-button'></button>");
+            base.$headerButton = base.$header.find('button');
+            base.$headerButton.attr('id', itemId).attr('aria-expanded', false);
+            
             base.toggle(!base.options.startCollapsed);
+            
+            base.$body.attr('aria-labelledby', itemId);
+
+            if (base.$body.attr('id') !== undefined) {
+                itemId = base.$body.attr('id');
+                base.$headerButton.attr('aria-controls', itemId);
+            } else {
+                base.$body.attr('id', itemId + '-' + 1 );
+                base.$headerButton.attr('aria-controls', itemId + '-' + 1 );
+            }            
 
             // Handle events
-            base.$header.on(base.options.triggerEvent + ".wsol.accordionItem", base._triggerHandler);
+            base.$headerButton.on(base.options.triggerEvent + ".wsol.accordionItem", base._triggerHandler);
         };
 
         base._rebuildSprite = function () {
@@ -45,7 +64,7 @@
         };
 
         base._triggerHandler = function (event) {
-            $(this).is("a") && event.preventDefault();
+            event.preventDefault();
 
             base.toggle();
         };
@@ -70,6 +89,8 @@
                 .removeClass(base.options.closeClass)
                 .addClass(base.options.openClass);
 
+            base.$headerButton.attr('aria-expanded', true);
+
             base.$body.stop().slideDown(base.options.toggleSpeed, function () {
                 base.$body.height('');
                 if (base.options.afterOpen != null) {
@@ -89,6 +110,8 @@
             base.$el
                 .removeClass(base.options.openClass)
                 .addClass(base.options.closeClass);
+
+            base.$headerButton.attr('aria-expanded', false);
 
             base.$body.stop().slideUp(base.options.toggleSpeed, function () {
                 base.$body.height('');
