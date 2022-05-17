@@ -37,7 +37,11 @@
             base.$spriteContainer = base.$el.find(base.options.spriteContainer);
             base.$sprite = $("<div />").addClass(base.options.spriteClass).appendTo(base.$spriteContainer);
             
-            base.$header.wrapInner("<button class='accordion-button'></button>");
+            if (base.$header.find('.expandable-header-wrap').length) {
+                base.$header.wrapInner("<button class='accordion-button'></button>");
+            } else {
+                base.$header.wrapInner("<button class='accordion-button'><span class='expandable-header-wrap'></span></button>");
+            }
             base.$headerButton = base.$header.find('button');
             base.$headerButton.attr('id', itemId).attr('aria-expanded', false);
             
@@ -125,7 +129,8 @@
 
         base.destroy = function () {
             base.$sprite.remove();
-            base.$body.stop().css("display", "").attr('style', '');
+            base.$body.stop().css("display", "").attr('style', '').removeAttr('aria-labelledby');
+            base.$headerButton.find('.expandable-header-wrap').unwrap();
 
             // Remove events
             base.$header.off(".wsol.accordionItem");
