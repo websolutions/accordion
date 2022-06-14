@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/websolutions/accordion.git"
+    "url": "https://github.com/websolutions/accordion.git"
   },
   "license": "MIT",
   "bugs": {
