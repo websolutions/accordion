@@ -38,9 +38,9 @@
             base.$sprite = $("<div />").addClass(base.options.spriteClass).appendTo(base.$spriteContainer);
             
             if (base.$header.find('.expandable-header-wrap').length) {
-                base.$header.wrapInner("<button class='accordion-button'></button>");
+                base.$header.wrapInner("<button class='accordion-button' type='button'></button>");
             } else {
-                base.$header.wrapInner("<button class='accordion-button'><span class='expandable-header-wrap'></span></button>");
+                base.$header.wrapInner("<button class='accordion-button' type='button'><span class='expandable-header-wrap'></span></button>");
             }
             base.$headerButton = base.$header.find('button');
             base.$headerButton.attr('id', itemId).attr('aria-expanded', false);
