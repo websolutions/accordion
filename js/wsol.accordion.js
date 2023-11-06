@@ -1,5 +1,5 @@
 /**
- * wsol.accordion.js 5.1.0
+ * wsol.accordion.js 6.0.3
  * http://github.com/websolutions/accordion
  */
  
@@ -44,9 +44,7 @@
             }
             base.$headerButton = base.$header.find('button');
             base.$headerButton.attr('id', itemId).attr('aria-expanded', false);
-            
-            base.toggle(!base.options.startCollapsed);
-            
+                        
             base.$body.attr('aria-labelledby', itemId);
 
             if (base.$body.attr('id') !== undefined) {
@@ -55,7 +53,7 @@
             } else {
                 base.$body.attr('id', itemId + '-' + 1 );
                 base.$headerButton.attr('aria-controls', itemId + '-' + 1 );
-            }            
+            }     
 
             // Handle events
             base.$headerButton.on(base.options.triggerEvent + ".wsol.accordionItem", base._triggerHandler);
@@ -189,9 +187,26 @@
                 }))
                 .map(function () { return $(this).data("wsol.accordionItem") });
 
-            if (base.options.startCollapsed && base.options.startFirstOpen) {
-                base.items[0].open();
+            if (base.options.startCollapsed) {
+                base.items.each(function() {
+                    this.close();
+                })
+                if (base.options.startFirstOpen) {
+                    base.items[0].open();
+                }
+            } else {
+                var tempAuto =  base.options.autoCollapse
+                    , tempFirst = base.options.startFirstOpen
+                    ;
+                base.options.autoCollapse = false;
+                base.options.startFirstOpen = true;
+                base.items.each(function() {
+                    this.open();
+                })
+                base.options.autoCollapse = tempAuto;
+                base.options.startFirstOpen = tempFirst;
             }
+            
         };
 
         base._openHandler = function (item) {

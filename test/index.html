@@ -39,6 +39,13 @@
           <p>Accordion Content</p>
         </div>
       </div>
+      <div class="item">
+        <h3 class="header sprite-container">Accordion Item #3</h3>
+        <div class="info">Teaser text.</div>
+        <div class="more">
+          <p>Accordion Content</p>
+        </div>
+      </div>
     </div>
 
     <div class="accordion set2">
@@ -81,7 +88,11 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
 
-    <p> <button onclick="$('.accordion').wsol_accordion();">Make Accordions</button> </p>
+    <p> <button onclick="$('.accordion').wsol_accordion({
+      //autoCollapse: false,
+      //startCollapsed: false,
+      //startFirstOpen: true
+    });">Make Accordions</button> </p>
     <p> <button onclick="$('.custom-accordion').wsol_accordion({
       itemSelector: '.mod',
       headerSelector: '.hd',
